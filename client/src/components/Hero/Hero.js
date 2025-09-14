@@ -1,10 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Hero.css';
+import heroImg from '../../assets/one-redovisning.png';
 
 function Hero() {
+  const bgStyle = {
+    backgroundImage: `url(${heroImg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  };
+
   return (
-    <section className="hero-section">
+    <section className="hero-section" style={bgStyle}>
       <div className="hero-bg" />
       <motion.div className="hero-content" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
         <p className="hero-intro">VÄLKOMMEN TILL PROFESSIONELL REDOVISNING</p>

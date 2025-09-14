@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.90c8e27e.css",
-    "main.js": "/static/js/main.ec071b2d.js",
+    "main.css": "/static/css/main.e543ea53.css",
+    "main.js": "/static/js/main.d45dea37.js",
+    "static/media/one-redovisning.png": "/static/media/one-redovisning.05a9f21f93b15f284282.png",
     "index.html": "/index.html",
-    "main.90c8e27e.css.map": "/static/css/main.90c8e27e.css.map",
-    "main.ec071b2d.js.map": "/static/js/main.ec071b2d.js.map"
+    "main.e543ea53.css.map": "/static/css/main.e543ea53.css.map",
+    "main.d45dea37.js.map": "/static/js/main.d45dea37.js.map"
   },
   "entrypoints": [
-    "static/css/main.90c8e27e.css",
-    "static/js/main.ec071b2d.js"
+    "static/css/main.e543ea53.css",
+    "static/js/main.d45dea37.js"
   ]
 }
