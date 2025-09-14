@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('One Redovisning AB API');
+  res.send('One Redovisning AB API - TJENARE');
 });
 
 app.post('/contact', (req, res) => {

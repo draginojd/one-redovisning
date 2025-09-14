@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import OmOss from './pages/OmOss';
 import Kontakt from './pages/Kontakt';
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -19,9 +20,7 @@ function App() {
             {/* Additional routes can be added here */}
           </Routes>
         </main>
-        <footer>
-          <p>© 2025 One Redovisning AB</p>
-        </footer>
+  <Footer />
       </motion.div>
     </BrowserRouter>
   );

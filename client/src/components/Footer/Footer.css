@@ -1,0 +1,30 @@
+.site-footer {
+  background: #243a9c; /* deep blue */
+  color: #e6ecff;
+  padding: 44px 20px 22px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 360px 1fr 320px;
+  gap: 36px;
+  align-items: start;
+}
+.footer-col h4, .footer-col h5 { margin: 0 0 12px 0; }
+.footer-col .muted { color: rgba(223,227,255,0.85); font-size: 14px; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin: 8px 0; }
+.footer-col a { color: rgba(223,227,255,0.95); text-decoration: none; }
+.footer-col a:hover { text-decoration: underline; }
+.logo-pill { width:36px; height:36px; background: rgba(255,255,255,0.06); display:inline-grid; place-items:center; border-radius:6px; color:#fff; font-weight:700; margin-bottom:8px; }
+.footer-inner .brand h4 { margin-top:8px; }
+.footer-rule { border: 0; height:1px; background: rgba(255,255,255,0.07); margin:22px 0; }
+.footer-bottom { max-width:1200px; margin:0 auto 0; display:flex; justify-content:space-between; font-size:13px; color: rgba(230,236,255,0.75); align-items:center; padding-bottom:8px; }
+.policies { display:flex; gap:18px; }
+.policies a { color: rgba(223,227,255,0.85); text-decoration:none; }
+
+@media (max-width: 880px) {
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction:column; gap:8px; align-items:flex-start; }
+}
