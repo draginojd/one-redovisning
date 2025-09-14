@@ -39,6 +39,7 @@
   font-size: 1.1rem;
   color: var(--color-text);
 }
+.logo-text .main .brand { color: var(--color-primary); }
 
 .logo-text .sub {
   font-size: 0.9rem;

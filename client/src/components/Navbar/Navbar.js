@@ -30,8 +30,8 @@ function Navbar() {
       <div className="navbar-logo">
         <motion.div className="logo-icon" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>O</motion.div>
         <div className="logo-text">
-          <span className="main">One Redovisning</span>
-          <span className="sub">Stockholm AB</span>
+          <span className="main">One <span className="brand">Redovisning</span></span>
+          <span className="sub">Bokning • Rådgivning • Redovisning</span>
         </div>
       </div>
       <button className={`hamburger ${open ? 'is-open' : ''}`} aria-label="Toggle menu" onClick={() => setOpen(!open)}>
