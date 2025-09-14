@@ -15,7 +15,7 @@ function Navbar() {
   return (
     <motion.nav className="navbar" initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
       <div className="navbar-logo">
-        <motion.div className="logo-icon" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>O</motion.div>
+        
         <div className="logo-text">
           <span className="main">One Redovisning</span>
           <span className="sub">Stockholm AB</span>

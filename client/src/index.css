@@ -23,6 +23,8 @@
   --success-600: hsl(142 65% 40%);
   --success-700: hsl(142 60% 35%);
   --success-rgb: 34, 197, 94; /* approx for shadows */
+  /* Brand red for logo */
+  
 }
 
 html,body,#root {
