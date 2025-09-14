@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { API_URL } from '../api';
 
 function Kontakt() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('idle');
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const subject = params.get('subject');
+    if (subject) {
+      setForm((f) => ({ ...f, message: `Angående: ${subject}\n\n` }));
+    }
+  }, []);
 
   async function submit(e) {
     e.preventDefault();
@@ -33,12 +41,12 @@ function Kontakt() {
       <h2>Kontakt</h2>
       <p>Fyll i formuläret så återkommer vi så snart vi kan.</p>
 
-      <form onSubmit={submit} style={{ display: 'grid', gap: '0.6rem', maxWidth: 520 }}>
-        <input placeholder="Namn" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-        <input placeholder="E-post" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-        <textarea placeholder="Meddelande" rows={6} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
+      <form onSubmit={submit} style={{ display: 'grid', gap: '0.6rem', maxWidth: 520 }} aria-label="Kontaktformulär">
+        <input aria-label="Namn" placeholder="Namn" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+        <input aria-label="E-post" placeholder="E-post" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+        <textarea aria-label="Meddelande" placeholder="Meddelande" rows={6} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
         <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
-          <button type="submit">Skicka</button>
+          <button type="submit" aria-live="polite">Skicka</button>
           {status === 'sending' && <span>Skickar...</span>}
           {status === 'sent' && <span style={{ color: 'green' }}>Tack! Meddelandet skickades.</span>}
           {status === 'error' && <span style={{ color: 'red' }}>Fel vid skickning. Försök senare.</span>}

@@ -1,13 +1,13 @@
 :root {
   /* Primary brand colors (extracted approximation from hero image) */
   /* Primary blue (white/blue/black theme) */
-  --color-primary: #3B82F6; /* slightly lighter blue */
-  --color-primary-700: #1e40af; /* darker variant */
-  --color-primary-rgb: 59,130,246;
+  --color-primary: #1a73ff; /* slightly lighter IBM-like blue */
+  --color-primary-700: #0b59d6;
+  --color-primary-rgb: 26,115,255;
 
   /* Neutrals */
-  --color-text: #0f1724; /* near-black */
-  --color-muted: #6c757d;
+  --color-text: #0b1721; /* near-black tuned */
+  --color-muted: #5f6b74;
   --color-bg: #f7f8fa;
   --color-surface: #ffffff;
 
