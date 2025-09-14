@@ -1,0 +1,103 @@
+/* Flyttad Hero.css till Hero-mappen */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* If you later add a hero image, place it in client/public/hero-bg.jpg and revert to using url('/hero-bg.jpg') */
+  background: linear-gradient(90deg, rgba(79,91,213,0.6), rgba(79,91,213,0.35));
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(79, 91, 213, 0.45);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  max-width: 480px;
+  margin-left: 3rem;
+  box-shadow: 0 8px 32px rgba(79,91,213,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.hero-intro {
+  font-size: 0.95rem;
+  color: #6c757d;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  color: #181c32;
+}
+
+.hero-highlight {
+  color: #4f5bd5;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: #181c32;
+  margin-bottom: 0.5rem;
+}
+
+.hero-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  color: #181c32;
+}
+
+.hero-list li {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-btn {
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f7f8fa;
+  color: #181c32;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hero-btn.primary {
+  background: #4f5bd5;
+  color: #fff;
+}
+
+.hero-btn.primary:hover {
+  background: #3c47b2;
+}
+
+.hero-btn:hover {
+  background: #e2e6f3;
+  color: #4f5bd5;
+}
