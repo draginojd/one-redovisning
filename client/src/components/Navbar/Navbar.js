@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 const navLinks = [
@@ -22,15 +22,18 @@ function Navbar() {
           <span className="sub">Stockholm AB</span>
         </div>
       </div>
+
       <ul className="navbar-links">
         {navLinks.map((item) => (
           <motion.li
             key={item.label}
-            whileHover={{ color: '#4f5bd5', scale: 1.08 }}
+            whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
-            <Link to={item.to}>{item.label}</Link>
+            <NavLink to={item.to} className={({ isActive }) => isActive ? 'navlink active' : 'navlink'}>
+              {item.label}
+            </NavLink>
           </motion.li>
         ))}
       </ul>

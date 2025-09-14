@@ -1,0 +1,31 @@
+:root {
+  /* Primary brand colors (extracted approximation from hero image) */
+  /* Primary blue (white/blue/black theme) */
+  --color-primary: #3B82F6; /* slightly lighter blue */
+  --color-primary-700: #1e40af; /* darker variant */
+  --color-primary-rgb: 59,130,246;
+
+  /* Neutrals */
+  --color-text: #0f1724; /* near-black */
+  --color-muted: #6c757d;
+  --color-bg: #f7f8fa;
+  --color-surface: #ffffff;
+
+  /* Light accents */
+  --color-light: #eef0ff;
+  --color-muted-bg: #e9ecff;
+  --color-alt-bg: #e2e6f3;
+
+  --radius: 0.5rem;
+}
+
+html,body,#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--color-surface);
+  color: var(--color-text);
+}

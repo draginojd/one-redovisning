@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import OmOss from './pages/OmOss';
 import Kontakt from './pages/Kontakt';
 import Navbar from './components/Navbar/Navbar';
-import Hero from './components/Hero/Hero';
 
 function App() {
   return (
@@ -13,7 +12,6 @@ function App() {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
         <Navbar />
         <main>
-          <Hero />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/om-oss" element={<OmOss />} />

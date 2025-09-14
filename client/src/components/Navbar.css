@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(90deg, #f7f8fa 0%, #f7f8fa 100%);
+  background: linear-gradient(90deg, var(--color-bg) 0%, var(--color-bg) 100%);
   padding: 0.5rem 2rem;
   border-radius: 1rem 1rem 0 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
@@ -15,7 +15,7 @@
 }
 
 .logo-icon {
-  background: #4f5bd5;
+  background: var(--color-primary);
   color: #fff;
   font-weight: bold;
   font-size: 1.5rem;
@@ -36,12 +36,12 @@
 .logo-text .main {
   font-weight: 700;
   font-size: 1.1rem;
-  color: #181c32;
+  color: var(--color-text);
 }
 
 .logo-text .sub {
   font-size: 0.9rem;
-  color: #6c757d;
+  color: var(--color-muted);
 }
 
 .navbar-links {
@@ -54,11 +54,11 @@
 
 .navbar-links li {
   font-size: 1rem;
-  color: #181c32;
+  color: var(--color-text);
   cursor: pointer;
   transition: color 0.2s;
 }
 
 .navbar-links li:hover {
-  color: #4f5bd5;
+  color: var(--color-primary);
 }
