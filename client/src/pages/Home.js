@@ -3,6 +3,7 @@ import { getRoot } from '../api';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero/Hero';
 import Services from '../components/Services/Services';
+import Prisuppskattning from './Prisuppskattning';
 
 function Home() {
   const [apiMessage, setApiMessage] = useState('');
@@ -15,6 +16,10 @@ function Home() {
     <>
   <Hero />
   <Services />
+  {/* Prisuppskattning placerad direkt under "Våra tjänster" på startsidan */}
+  <div style={{ marginTop: '3rem' }}>
+    <Prisuppskattning />
+  </div>
       <motion.section initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
         <h2>Välkommen till One Redovisning AB</h2>
         <p>{apiMessage}</p>

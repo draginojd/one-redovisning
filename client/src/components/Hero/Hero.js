@@ -25,10 +25,10 @@ function Hero() {
           Vår smarta tjänst passar alla företag och ger dig som kund moderna lösningar och personlig service.
         </p>
         <ul className="hero-list">
-          <li>✔ Digital och modern bokföring</li>
-          <li>✔ Fast månadskostnad</li>
-          <li>✔ Personlig service</li>
-          <li>✔ Snabb support</li>
+          <li>Digital och modern bokföring</li>
+          <li>Fast månadskostnad</li>
+          <li>Personlig service</li>
+          <li>Snabb support</li>
         </ul>
         <div className="hero-actions">
           <button className="hero-btn primary">Kontakta oss idag</button>

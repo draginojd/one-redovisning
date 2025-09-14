@@ -21,6 +21,16 @@ En professionell produktions hemsida för One Redovisning AB, skapad med React, 
    npm start
    ```
 
+## Bygga för produktion
+Kompilera React-klienten:
+```powershell
+npm run build --prefix client
+```
+Utdata finns i `client/build`.
+
+## Sidor
+- Prisuppskattning: `/prisuppskattning` (reglage för löner, fakturor, kvitton; max 100)
+
 ## Struktur
 - `/client` - React frontend med framer-motion
 - `/server` - Node.js backend

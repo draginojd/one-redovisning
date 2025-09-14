@@ -7,6 +7,7 @@
   padding: 0.5rem 2rem;
   border-radius: 1rem 1rem 0 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  z-index: 10001; /* ensure navbar sits above full-screen mobile nav */
 }
 
 .navbar-logo {
@@ -74,4 +75,66 @@
   background: linear-gradient(90deg, var(--color-light), var(--color-muted-bg));
   color: var(--color-primary);
   box-shadow: 0 4px 12px rgba(var(--color-primary-rgb),0.08);
+}
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+  display: none;
+  width: 40px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 10002; /* on top of navbar and overlay */
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: var(--color-text);
+  border-radius: 3px;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+.hamburger.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Mobile nav overlay */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  background: var(--color-surface);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px; /* leave space for navbar */
+}
+.mobile-nav ul { list-style: none; padding: 0; margin: 0; display:flex; flex-direction:column; gap:18px; align-items:flex-start; width:100% }
+.mobile-nav li { font-size: 1.1rem; width:100%; text-align:left; padding-left: 22px; }
+
+.mobile-nav li .navlink { display:block; width:100%; padding: 12px 22px; }
+
+/* prevent background scrolling when mobile menu is open */
+body.no-scroll { overflow: hidden; }
+
+/* When menu is open, switch navbar background to white for better contrast */
+body.menu-open .navbar {
+  background: var(--color-surface);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.08);
+}
+
+/* Make mobile overlay white content panel centered on dark translucent backdrop */
+.mobile-nav { background: var(--color-surface); }
+
+/* Responsive rules */
+@media (max-width: 880px) {
+  .navbar-links { display: none; }
+  .hamburger { display: flex; }
+}
+
+@media (min-width: 881px) {
+  .mobile-nav { display: none; }
 }
