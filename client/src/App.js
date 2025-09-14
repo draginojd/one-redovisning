@@ -1,14 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Home from './Home';
+import Navbar from './Navbar';
 
 function App() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-      <header>
-        <h1>One Redovisning AB</h1>
-        <p>Din professionella redovisningsbyrå</p>
-      </header>
+      <Navbar />
       <main>
         <Home />
         <section>
