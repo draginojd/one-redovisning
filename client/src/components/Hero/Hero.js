@@ -5,10 +5,12 @@ import './Hero.css';
 import heroImg from '../../assets/hero-photo-like.svg';
 
 function Hero() {
-  // Prefer a public image placed at /hero-reference.jpg (client/public/hero-reference.jpg)
-  // If it's not present the browser will fall back to the bundled SVG (heroImg).
+  // Prefer an env-provided real photo or public file; fall back to bundled asset
+  const externalPhoto =
+    process.env.REACT_APP_HERO_PHOTO_URL ||
+    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80';
   const bgStyle = {
-    backgroundImage: `url('/hero-reference.jpg'), url(${heroImg})`,
+    backgroundImage: `url(${externalPhoto}), url('/hero-reference.jpg'), url(${heroImg})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
