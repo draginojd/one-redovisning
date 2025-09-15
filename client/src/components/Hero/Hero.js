@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './Hero.css';
 import heroImg from '../../assets/hero-photo-like.svg';
 import vectorImg from '../../assets/vector.png';
+import { AnimatedText } from '../Animated/AnimatedText';
 
 function Hero() {
   // Prefer an env-provided real photo or public file; fall back to bundled asset
@@ -23,15 +24,15 @@ function Hero() {
       <div className="hero-bg" />
       <div className="hero-inner">
         <motion.div className="hero-content" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <p className="hero-intro">VÄLKOMMEN TILL PROFESSIONELL REDOVISNING</p>
+          <AnimatedText as="p" className="hero-intro" text="VÄLKOMMEN TILL PROFESSIONELL REDOVISNING" delay={0.1} />
           <h1>
-            One Redovisning erbjuder <br />
-            moderna lösningar och <br />
-            <span className="hero-highlight">personlig service</span>
+            <AnimatedText as="span" text={`One Redovisning erbjuder`} delay={0.18} />
+            <br />
+            <AnimatedText as="span" text={`moderna lösningar och`} delay={0.26} />
+            <br />
+            <AnimatedText as="span" text={`personlig service`} delay={0.34} className="hero-highlight" />
           </h1>
-          <p className="hero-desc">
-            Vår smarta tjänst passar alla företag och ger dig som kund moderna lösningar och personlig service.
-          </p>
+          <AnimatedText as="p" className="hero-desc" text={`Vår smarta tjänst passar alla företag och ger dig som kund moderna lösningar och personlig service.`} delay={0.44} />
           <ul className="hero-list">
             <li>Digital och modern bokföring</li>
             <li>Fast månadskostnad</li>

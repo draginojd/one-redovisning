@@ -37,8 +37,8 @@
   background-color: rgb(255, 255, 255);
   /* only round the left side so it touches the illustration with 0px gap */
   border-radius: 0px;
-  border-top-right-radius: 10% ;
-  border-bottom-right-radius: 10% ;
+  border-top-right-radius: 7% ;
+  border-bottom-right-radius: 7% ;
   padding: 2rem 2rem 1.6rem 2rem;
   max-width: 480px;
   margin: 0; /* controlled by .hero-inner */
@@ -156,6 +156,12 @@
   .hero-inner { margin-left: 1.25rem; }
   .hero-content h1 { font-size: 1.8rem; }
   .hero-illustration{ display:none; }
+}
+
+/* Laptop breakpoint: reduce left offset and scale illustration for 1280px and below */
+@media (max-width: 1280px) {
+  .hero-inner { margin-left: 4rem; }
+  .hero-illustration img { max-height: 420px; }
 }
 
 @media (max-width: 600px) {
