@@ -24,12 +24,21 @@
 .quote{ margin:0; color: var(--color-text); font-size: 16px; line-height: 1.55; }
 .meta{ margin-top:8px; color: var(--color-muted); font-size: 14px; }
 
-/* Controls */
-.arrows{ position:absolute; inset: 0; pointer-events: none; }
-.arrow{ position:absolute; top: 50%; transform: translateY(-50%); pointer-events: auto; border: none; background: rgba(255,255,255,0.9); color: var(--color-text); box-shadow: var(--shadow-sm); width: 40px; height: 40px; border-radius: var(--radius-sm); cursor:pointer; display:grid; place-items:center; }
-.arrow:hover{ box-shadow: var(--shadow-md); }
-.arrow.prev{ left: 10px; }
-.arrow.next{ right: 10px; }
+/* Controls - visually hide arrow buttons.
+   Use a more specific selector and !important to ensure the buttons stay hidden
+   (some compiled/bundled CSS rules were re-enabling them). If you want the
+   arrows back, remove these rules or change to `display: grid` on `.carousel .arrow`.
+*/
+.carousel .arrows,
+.carousel .arrows .arrow,
+.carousel .arrow {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+}
 
 .dots{ display:flex; gap:12px; justify-content:center; position:absolute; left:50%; transform:translateX(-50%); bottom:12px; z-index:20; padding:8px 12px; background: rgba(255,255,255,0.85); backdrop-filter: blur(4px); border-radius: 999px; box-shadow: 0 6px 18px rgba(12,18,28,0.08); }
 .dot{ width:40px; height:40px; border-radius:50%; border:none; cursor:pointer; background:transparent; padding:4px; display:inline-grid; place-items:center; }

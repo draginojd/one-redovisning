@@ -154,14 +154,7 @@ export default function Testimonials(){
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          <div className="arrows">
-            <button className="arrow prev" aria-label="Föregående" onClick={prev}>
-              ‹
-            </button>
-            <button className="arrow next" aria-label="Nästa" onClick={next}>
-              ›
-            </button>
-          </div>
+          {/* Navigation arrows intentionally removed per design — pagination dots control slides */}
 
           <div className="track">
             <AnimatePresence initial={false} custom={direction}>
