@@ -7,7 +7,7 @@ export default function Footer(){
     <footer className="site-footer deep">
       <div className="footer-inner">
         <div className="footer-col brand">
-          <div className="logo-pill">O</div>
+          
           <h4>One Redovisning</h4>
           <p className="muted">Professionella redovisningstjänster för moderna företag. Vi hjälper dig att hålla ordning på ekonomin så du kan fokusera på det du gör bäst.</p>
         </div>
