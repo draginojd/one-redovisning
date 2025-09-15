@@ -209,7 +209,7 @@
 /* --- Image tiles row above cards --- */
 .services-hero-grid{
   max-width: 1200px;
-  margin: 0 auto 22px auto;
+  margin: 2em auto 22px auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
