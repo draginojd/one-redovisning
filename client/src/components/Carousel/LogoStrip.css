@@ -5,9 +5,14 @@
 .logos-header p{ margin: 0; color: var(--color-muted); }
 
 .logo-row{ display:flex; flex-wrap:wrap; gap: 18px 28px; align-items:center; justify-content:center; }
-.logo{ padding: 8px 16px; border: 1px dashed rgba(15,20,30,0.12); border-radius: var(--radius-sm); color: var(--color-text); opacity: .8; filter: grayscale(100%); font-weight: 700; letter-spacing: .3px; }
-.logo:hover{ opacity: 1; filter: grayscale(0%); border-style: solid; }
+.logo{ display:flex; align-items:center; justify-content:center; padding:6px; border-radius:6px; transition: transform .18s ease, filter .18s ease, opacity .18s ease; }
+.logo-img{ width: 120px; height: auto; display:block; filter: grayscale(100%) contrast(.95) brightness(.98); opacity: .85; }
+.logo:hover .logo-img, .logo:focus-within .logo-img{ filter: none; opacity: 1; transform: translateY(-2px); }
 
-@media (max-width: 700px){
-  .logo{ font-size: 14px; }
+@media (max-width: 900px){
+  .logo-img{ width: 100px; }
+}
+
+@media (max-width: 520px){
+  .logo-img{ width: 84px; }
 }

@@ -1,0 +1,21 @@
+.split-contact{ padding: 42px 18px; background: #fff; }
+.split-inner{ max-width:1100px; margin:0 auto; display:flex; gap:34px; align-items:flex-start; }
+.split-left{ flex:1; padding-right:20px; }
+.split-left .eyebrow{ display:inline-block; letter-spacing:4px; font-size:12px; color:var(--color-muted); margin-bottom:12px; }
+.split-left h2{ font-family: 'Playfair Display', serif; font-weight:400; font-size:30px; line-height:1.2; margin:6px 0 16px; }
+.split-left .lead{ color:var(--color-muted); max-width:560px; }
+.split-right{ width:380px; }
+.contact-form{ background: var(--color-surface); padding:18px; border-radius:4px; }
+.contact-form label{ display:block; margin-bottom:12px; }
+.contact-form .label{ display:block; font-size:13px; margin-bottom:6px; color:var(--color-muted); }
+.contact-form input, .contact-form textarea{ width:100%; padding:12px; border:0; border-radius:2px; background:#f3e8df; resize:vertical; }
+.contact-form textarea{ min-height:90px; }
+.btn-send{ background:transparent; border:0; color:var(--color-text); font-weight:700; padding-top:6px; }
+.form-status{ margin-top:10px; }
+.form-status.success{ color:green; }
+.form-status.error{ color:#b33; }
+
+@media (max-width: 900px){
+  .split-inner{ flex-direction:column; }
+  .split-right{ width:100%; }
+}
