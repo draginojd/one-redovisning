@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../../assets/onelogga.png';
 
 const navLinks = [
   { label: 'Hem', to: '/' },
@@ -28,10 +29,7 @@ function Navbar() {
   return (
     <motion.nav className="navbar" initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
       <div className="navbar-logo">
-        <div className="logo-text">
-          <span className="main">One <span className="brand">Redovisning</span></span>
-          <span className="sub">Bokning • Rådgivning • Redovisning</span>
-        </div>
+       <img src={logo} alt="One Redovisning logo" className="logo-image" /> 
       </div>
       <button className={`hamburger ${open ? 'is-open' : ''}`} aria-label="Toggle menu" onClick={() => setOpen(!open)}>
         <span />

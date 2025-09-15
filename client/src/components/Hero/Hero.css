@@ -6,13 +6,15 @@
   align-items: center;
   justify-content: flex-start;
   /* If you later add a hero image, place it in client/public/hero-bg.jpg and revert to using url('/hero-bg.jpg') */
-  background: linear-gradient(90deg, rgba(var(--color-primary-rgb),0.6), rgba(var(--color-primary-rgb),0.35));
+  /* subtle blue gradient overlay instead of purple */
+  background: linear-gradient(90deg, rgba(var(--color-primary-rgb),0.45), rgba(var(--color-primary-rgb),0.18));
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: rgba(var(--color-primary-rgb), 0.45);
+  /* lighter blue veil so photo remains visible and looks cool/credible */
+  background: rgba(var(--color-primary-rgb), 0.28);
   z-index: 1;
 }
 
@@ -24,7 +26,7 @@
   padding: 2.5rem 2.5rem 2rem 2.5rem;
   max-width: 480px;
   margin-left: 10rem;
-  box-shadow: 0 8px 32px rgba(var(--color-primary-rgb),0.08);
+  box-shadow: 0 8px 32px rgba(var(--color-primary-rgb),0.06);
   display: flex;
   flex-direction: column;
   gap: 1.2rem;

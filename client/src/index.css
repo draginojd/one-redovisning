@@ -1,9 +1,10 @@
 :root {
   /* Primary brand colors (extracted approximation from hero image) */
   /* Primary blue (white/blue/black theme) */
-  --color-primary: #1a73ff; /* slightly lighter IBM-like blue */
-  --color-primary-700: #0b59d6;
-  --color-primary-rgb: 26,115,255;
+  /* Primary deep blue for One Redovisning */
+  --color-primary: #1350d8; /* deep trustworthy blue */
+  --color-primary-700: #0b3ea8;
+  --color-primary-rgb: 19,80,216; /* 19,80,216 */
 
   /* Neutrals */
   --color-text: #0b1721; /* near-black tuned */
@@ -12,9 +13,10 @@
   --color-surface: #ffffff;
 
   /* Light accents */
-  --color-light: #eef0ff;
-  --color-muted-bg: #e9ecff;
-  --color-alt-bg: #e2e6f3;
+  /* blue-leaning light accents */
+  --color-light: #eef4ff;
+  --color-muted-bg: #e6efff;
+  --color-alt-bg: #dbe8ff;
 
   --radius: 0.5rem;
 

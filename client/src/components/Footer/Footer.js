@@ -1,14 +1,14 @@
 import React from 'react';
 import './Footer.css';
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import logo from '../../assets/onelogga.png';
 
 export default function Footer(){
   return (
     <footer className="site-footer deep">
       <div className="footer-inner">
         <div className="footer-col brand">
-          
-          <h4>One Redovisning</h4>
+          <img src={logo} alt="One Redovisning logo" className="footer-image" />
           <p className="muted">Professionella redovisningstjänster för moderna företag. Vi hjälper dig att hålla ordning på ekonomin så du kan fokusera på det du gör bäst.</p>
         </div>
 

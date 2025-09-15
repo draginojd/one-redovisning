@@ -2,11 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './Hero.css';
-import heroImg from '../../assets/one-redovisning.png';
+import heroImg from '../../assets/hero-photo-like.svg';
 
 function Hero() {
+  // Prefer a public image placed at /hero-reference.jpg (client/public/hero-reference.jpg)
+  // If it's not present the browser will fall back to the bundled SVG (heroImg).
   const bgStyle = {
-    backgroundImage: `url(${heroImg})`,
+    backgroundImage: `url('/hero-reference.jpg'), url(${heroImg})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',

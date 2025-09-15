@@ -15,18 +15,15 @@
   align-items: center;
 }
 
-.logo-icon {
-  background: green;
+.logo-image {
+ 
   color: #fff;
   font-weight: bold;
-  font-size: 1.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 0.75rem;
+  
+  width: 100%;
+  height: 7vh;
+  margin-left: 30%;
+ 
 }
 
 .logo-text {
@@ -75,7 +72,7 @@
 .navlink.active {
   background: linear-gradient(90deg, var(--color-light), var(--color-muted-bg));
   color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(var(--color-primary-rgb),0.08);
+  box-shadow: 0 4px 12px rgba(var(--color-primary-rgb),0.06);
 }
 
 /* Hamburger button (hidden on desktop) */

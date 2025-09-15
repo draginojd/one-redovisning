@@ -1,5 +1,5 @@
 .site-footer {
-  background: #243a9c; /* deep blue */
+  background: #1b1b1b; /* deep blue */
   color: #e6ecff;
   padding: 44px 20px 22px;
 }
@@ -10,6 +10,12 @@
   grid-template-columns: 360px 1fr 320px;
   gap: 36px;
   align-items: start;
+}
+
+.footer-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
 }
 .footer-col h4, .footer-col h5 { margin: 0 0 12px 0; }
 .footer-col .muted { color: rgba(223,227,255,0.85); font-size: 14px; }
