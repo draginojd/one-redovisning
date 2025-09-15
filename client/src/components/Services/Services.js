@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { FaRegFileAlt, FaWallet, FaChartLine, FaUsers, FaCalendarCheck, FaRegComments, FaCalculator } from 'react-icons/fa';
 import './Services.css';
 import { servicesData } from './servicesData';
+import { servicesContainer, serviceItem, reducedMotionImmediate } from './serviceAnimations';
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 
 function IconBookkeeping(props){
   return (
@@ -62,6 +64,7 @@ const cardVariants = {
 };
 
 function Services() {
+  const reduce = usePrefersReducedMotion();
   const iconMap = [FaCalculator, FaRegFileAlt, FaChartLine, FaWallet, FaUsers, FaCalendarCheck];
 
   return (
@@ -108,7 +111,13 @@ function Services() {
         </a>
       </div>
 
-      <div className="services-grid">
+      <motion.div
+        className="services-grid"
+        variants={reduce ? undefined : servicesContainer(0.15)}
+        initial={reduce ? undefined : 'hidden'}
+        whileInView={reduce ? undefined : 'visible'}
+        viewport={{ once: true, amount: 0.4 }}
+      >
   {servicesData.map((s, i) => {
           const Icon = iconMap[i] || FaRegComments;
           const isFirst = i === 0;
@@ -116,11 +125,9 @@ function Services() {
             <motion.article
               className={`service-card ${isFirst ? 'is-open' : ''}`}
               key={s.title}
-              initial="hidden"
-              animate="visible"
-              whileHover="hover"
-              variants={cardVariants}
-              transition={{ duration: 0.35, delay: i * 0.06 }}
+              variants={reduce ? undefined : serviceItem}
+              initial={reduce ? { opacity: 1 } : undefined}
+              whileHover={reduce ? undefined : 'hover'}
               role="article"
             >
               <div className="service-icon" aria-hidden="true">
@@ -149,7 +156,7 @@ function Services() {
             </motion.article>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -234,11 +234,45 @@
 }
 @media (max-width: 900px){
   .services-showcase-inner{ grid-template-columns: 1fr; }
-  .services-showcase-inner .services-left{ max-width: 640px; }
+  .services-showcase-inner .services-left{ max-width: 640px; display:block; order: -1; }
+  /* Strong visibility overrides for mobile to prevent accidental hiding */
+  .services-showcase-inner .services-left,
+  .services-showcase-inner .services-left * {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .services-showcase-inner .services-left { z-index: 3; }
+}
+
+/* Remove any blur from animated text on small screens */
+@media (max-width: 900px){
+  .services-showcase-inner .services-left .animated-word,
+  .services-showcase-inner .services-left .animated-text,
+  .services-showcase-inner .services-left * {
+    -webkit-filter: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
 }
 @media (max-width: 560px){
   .services-showcase-inner{ padding: 0 8px; gap: 24px; }
   .services-showcase-inner .services-left h2{ font-size: 38px; }
+}
+
+/* Ensure left block has bottom spacing before grid on mobile */
+@media (max-width: 900px){
+  .services-showcase-inner .services-left{ margin-bottom: 12px; }
+}
+@media (max-width: 560px){
+  .services-showcase-inner .services-left{ margin-bottom: 4px; }
+  .image-tile{width: 90%;}
+  .services-hero-grid{display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin: 1em auto 22px auto;}
 }
 
 .image-tile{
@@ -273,5 +307,14 @@
 
 @media (max-width: 900px) {
   .services-hero-grid{ grid-template-columns: 1fr; }
+}
+
+/* Reduce vertical space above to bring left text into view earlier on very small screens */
+@media (max-width: 720px) {
+  .services-section { padding-top: 2.25rem; }
+  .services-showcase-inner { gap: 18px; }
+  .services-showcase-inner .services-left h2{ font-size: 30px; }
+  /* Ensure clear spacing so heading is visible before the first card */
+  .services-showcase-inner .services-left{ margin-bottom: 16px; }
 }
 

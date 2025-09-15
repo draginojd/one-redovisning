@@ -35,7 +35,9 @@
 .dot{ width:40px; height:40px; border-radius:50%; border:none; cursor:pointer; background:transparent; padding:4px; display:inline-grid; place-items:center; }
 .dot svg{ width:24px; height:24px; display:block; transition: transform 220ms cubic-bezier(.2,.9,.2,1), filter 180ms ease; }
 .dot:focus{ outline: 3px solid rgba(124,87,255,0.18); outline-offset: 4px; border-radius:50%; }
-.dot[aria-current="true"] svg{ transform: scale(1.18); filter: drop-shadow(0 8px 18px rgba(79,61,255,0.14)); }
+.dot[aria-current="true"] svg{ transform: scale(1.18); filter: drop-shadow(0 8px 18px rgba(15,98,254,0.24)); }
+/* Force active dot fill to IBM blue (overrides inline gradient fill) */
+.dot[aria-current="true"] svg circle{ fill:#0F62FE; }
 
 /* Keyboard focus styles */
 .carousel:focus{ outline: 2px solid var(--color-primary); outline-offset: 2px; }

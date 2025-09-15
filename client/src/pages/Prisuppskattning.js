@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
+import { AnimatedText } from '../components/Animated/AnimatedText';
 import './Prisuppskattning.css';
 
 const BASE_FEE = 1500; // SEK
@@ -29,17 +30,25 @@ export default function Prisuppskattning() {
   return (
     <section className="price-section">
       <div className="price-header">
-        <div className="emoji">💡</div>
-        <h1>Få en prisuppskattning</h1>
-        <p>Använd vår kalkylator för att få en uppskattning av vad våra tjänster skulle kosta för ditt företag</p>
+        <div className="emoji" aria-hidden>💡</div>
+        <h1 className="price-title">
+          <AnimatedText text="Få en prisuppskattning" as="span" />
+        </h1>
+        <p className="price-sub">
+          <AnimatedText text="Använd vår kalkylator för att få en uppskattning av vad våra tjänster skulle kosta för ditt företag" as="span" delay={0.3} />
+        </p>
       </div>
 
       <div className="price-grid">
         {/* Left card: sliders */}
-        <motion.div className="card" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+        <motion.div className="card" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.6, ease: [0.22,0.9,0.24,1] }}>
           <div className="card-header">
-            <h3>Prisuppskattning</h3>
-            <p>Justera värdena nedan för att få en personlig prisuppskattning</p>
+            <h3>
+              <AnimatedText text="Prisuppskattning" as="span" />
+            </h3>
+            <p>
+              <AnimatedText text="Justera värdena nedan för att få en personlig prisuppskattning" as="span" delay={0.15} />
+            </p>
           </div>
 
           <div className="control">
@@ -65,13 +74,12 @@ export default function Prisuppskattning() {
 
         {/* Right column: total + breakdown */}
         <div className="right-col">
-          <motion.div className="card highlight" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <motion.div className="card highlight" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.6, ease: [0.22,0.9,0.24,1], delay: 0.1 }}>
             <h4>Uppskattad månadskostnad</h4>
             <div className="total">{formatSEK(breakdown.total)}</div>
             <div className="note">per månad exklusive moms</div>
           </motion.div>
-
-          <motion.div className="card" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <motion.div className="card" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.6, ease: [0.22,0.9,0.24,1], delay: 0.15 }}>
             <h3>Prisuppdelning</h3>
             <div className="rows">
               <div className="row"><span>Grundavgift</span><span>{formatSEK(BASE_FEE)}</span></div>
