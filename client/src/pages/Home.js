@@ -5,7 +5,7 @@ import Hero from '../components/Hero/Hero';
 import Services from '../components/Services/Services';
 import Prisuppskattning from './Prisuppskattning';
 import Testimonials from '../components/Carousel/Testimonials';
-import LogoStrip from '../components/Carousel/LogoStrip';
+import ImageGallery from '../components/Gallery/ImageGallery';
 import SplitContact from '../components/Contact/SplitContact';
 
 function Home() {
@@ -24,7 +24,7 @@ function Home() {
     <Prisuppskattning />
   </div>
   <Testimonials />
-  <LogoStrip />
+  <ImageGallery />
   <SplitContact />
       <motion.section initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
         <p>{apiMessage}</p>

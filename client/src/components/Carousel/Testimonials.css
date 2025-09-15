@@ -1,6 +1,10 @@
 /* Testimonials carousel */
-.section-testimonials{ padding: 48px 20px 64px; background: var(--color-surface); }
-.testimonials-inner{ max-width: 1100px; margin: 0 auto; }
+
+.testimonials-bleed{ 
+    width: 100%;
+}
+.section-testimonials{ width: 100%; padding: 48px 20px 64px; background: var(--color-surface); overflow-x: hidden; box-sizing: border-box; }
+.testimonials-inner{  max-width: 1100px; margin: 0 auto; box-sizing: border-box; }
 /* ensure slides include padding in their width so they don't cause horizontal overflow */
 .testimonials-inner{ padding: 0 12px; }
 .testimonials-header{ text-align:center; margin-bottom: 18px; }
@@ -13,7 +17,7 @@
 .slideshow-inner::after{ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.04) 100%); pointer-events:none; }
 
 .carousel{ position: relative; overflow: hidden; border-radius: var(--radius-lg); border: 1px solid rgba(15,20,30,0.06); box-shadow: var(--shadow-md); background: var(--color-surface); padding-bottom: 36px; }
-.track{ display: flex; position: relative; }
+.track{ display: flex; position: relative; flex-wrap: nowrap; overflow: hidden; }
 
 .slide{ min-width: 100%; padding: 24px; display: grid; grid-template-columns: 80px 1fr; gap: 16px; align-items: center; box-sizing: border-box; }
 .avatar{ width: 72px; height: 72px; border-radius: 50%; background: #e6efff; display: grid; place-items: center; color: var(--color-primary); font-weight: 800; box-shadow: var(--shadow-sm); }
