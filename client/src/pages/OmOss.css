@@ -1,0 +1,121 @@
+:root{
+  /* use the project's primary blue */
+  --accent: var(--color-primary);
+  --muted:#6b7280;
+  --card-bg:#fff;
+  --card-border: rgba(var(--color-primary-rgb), 0.12);
+}
+
+.omoss-section{
+  padding:64px 24px;
+}
+
+.omoss-container{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:40px;
+  align-items:start;
+}
+
+.omoss-left .eyebrow{
+  display:inline-block;
+  background:#f3f4f6;
+  color:var(--muted);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:13px;
+  margin-bottom:16px;
+}
+
+.omoss-title{
+  font-size:34px;
+  line-height:1.05;
+  margin:0 0 18px 0;
+}
+
+.omoss-title .accent{
+  color:var(--accent);
+}
+
+.lead{
+  color:var(--muted);
+  max-width:620px;
+}
+
+.stats-row{
+  display:flex;
+  gap:24px;
+  margin-top:28px;
+}
+
+.stat{
+  text-align:left;
+}
+
+.stat-number{
+  color:var(--accent);
+  font-weight:700;
+  font-size:18px;
+}
+
+.stat-label{
+  font-size:13px;
+  color:var(--muted);
+}
+
+.omoss-right{
+  border-radius:8px;
+}
+
+.values-heading{
+  margin:0 0 12px 0;
+  font-size:18px;
+}
+
+.values-list{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.value-card{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  padding:18px;
+  border-radius:8px;
+  box-shadow:0 1px 0 rgba(11,15,30,0.02);
+}
+
+.value-icon{
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  background:#f5f7ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+
+.value-title{
+  margin:0 0 6px 0;
+}
+
+.value-text{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+@media (max-width:900px){
+  .omoss-container{
+    grid-template-columns:1fr;
+  }
+
+  .stats-row{flex-wrap:wrap}
+}
