@@ -149,7 +149,17 @@ export default function Testimonials(){
 
           <div className="dots" role="tablist" aria-label="Välj citat">
             {SLIDES.map((_, i) => (
-              <button key={i} className="dot" aria-current={i===index} aria-label={`Gå till citat ${i+1}`} onClick={() => go(i)} />
+              <button key={i} className="dot" aria-current={i===index} aria-label={`Gå till citat ${i+1}`} onClick={() => go(i)}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id={`g-${i}`} x1="0" x2="1">
+                      <stop offset="0%" stopColor="#6C5CE7" />
+                      <stop offset="100%" stopColor="#4F3DFF" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="12" cy="12" r="6" fill={i===index ? `url(#g-${i})` : 'rgba(15,20,30,0.18)'} />
+                </svg>
+              </button>
             ))}
           </div>
 
