@@ -8,10 +8,32 @@ const SLIDES = [
   { name: 'Sara L.', role: 'COO, GreenFoods', quote: 'Professionellt bemötande och tydliga rapporter varje månad. Rekommenderas!' }
 ];
 
+// Photographic slideshow shown above the testimonials
+const SLIDESHOW_IMAGES = [
+  // Royalty-free Unsplash images (hotlinked); replace with local assets if desired
+  'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop'
+];
+
 const variants = {
   enter: (dir) => ({ x: dir > 0 ? 60 : -60, opacity: 0 }),
   center: { x: 0, opacity: 1 },
   exit: (dir) => ({ x: dir > 0 ? -60 : 60, opacity: 0 })
+};
+
+// Directional slide variants for the photo slideshow
+const imageVariants = {
+  enter: (dir) => ({ x: dir > 0 ? '100%' : '-100%', opacity: 0 }),
+  center: { x: '0%', opacity: 1 },
+  exit: (dir) => ({ x: dir > 0 ? '-100%' : '100%', opacity: 0 })
+};
+
+// Reduced-motion variant uses crossfade only
+const fadeVariants = {
+  enter: { opacity: 0 },
+  center: { opacity: 1 },
+  exit: { opacity: 0 }
 };
 
 function initials(name){
@@ -62,6 +84,28 @@ export default function Testimonials(){
   return (
     <section className="section-testimonials" aria-labelledby="testimonials-heading">
       <div className="testimonials-inner">
+        {/* Slideshow above testimonials */}
+        <div className="testimonials-slideshow" aria-hidden="true">
+          <div className="slideshow-inner">
+            <AnimatePresence initial={false} custom={direction}>
+              {SLIDESHOW_IMAGES.length > 0 && (
+                <motion.img
+                  key={index % SLIDESHOW_IMAGES.length}
+                  src={SLIDESHOW_IMAGES[index % SLIDESHOW_IMAGES.length]}
+                  alt=""
+                  className="slideshow-image"
+                  custom={direction}
+                  variants={prefersReduced ? fadeVariants : imageVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ type: 'tween', duration: prefersReduced ? 0 : 0.45, ease: 'easeInOut' }}
+                />
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+
         <header className="testimonials-header">
           <h2 id="testimonials-heading">Vad våra kunder säger</h2>
           <p>Riktiga röster från företag som använder våra tjänster varje månad.</p>
