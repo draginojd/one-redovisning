@@ -22,11 +22,12 @@
   position: relative;
   z-index: 2;
   background: var(--color-surface);
-  border-radius: 1rem;
-  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  background-color: rgba(255, 255, 255, 0.774);
+  border-radius: 2px;
+  padding: 2rem 2rem 1.6rem 2rem;
   max-width: 480px;
   margin-left: 10rem;
-  box-shadow: 0 8px 32px rgba(var(--color-primary-rgb),0.06);
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -91,15 +92,16 @@
 
 .hero-btn {
     padding: 0.7rem 1.4rem;
-    border-radius: 0.5rem;
-    border: none;
+    border-radius: 2px;
+    border: solid 1px rgb(202, 202, 202);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    background-color: #ececec;
+    background-color: #ffffff;
     text-decoration: none;
     color: var(--color-text);
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s, box-shadow .2s ease;
+    box-shadow: var(--shadow-sm);
 }
 
 .hero-btn.primary {
@@ -117,6 +119,8 @@
   color: var(--color-primary);
 }
 
+.hero-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
 /* Responsive hero adjustments */
 @media (max-width: 900px) {
   .hero-section { min-height: 70vh; }
@@ -126,7 +130,7 @@
 
 @media (max-width: 600px) {
   .hero-section { justify-content: center; padding: 2rem 1rem; }
-  .hero-content { margin: 0 auto; width: min(92%, 520px); padding: 1.25rem; border-radius: 0.75rem; }
+  .hero-content { margin: 0 auto; width: min(92%, 520px); padding: 1.25rem; border-radius: var(--radius-md); }
   .hero-content h1 { font-size: 1.5rem; text-align: center; }
   .hero-intro, .hero-desc, .hero-list li { text-align: center; }
   .hero-actions { justify-content: center; flex-direction: column; gap: 0.75rem; }

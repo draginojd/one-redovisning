@@ -22,12 +22,12 @@
 .kontakt-left .section-title{font-size:18px;margin:0 0 12px 0}
 
 .info-list{display:flex;flex-direction:column;gap:16px}
-.info-card{display:flex;gap:14px;align-items:flex-start;background:var(--card-bg);border:1px solid rgba(15,20,30,0.04);padding:16px;border-radius:8px}
-.info-icon{width:44px;height:44px;border-radius:8px;background:#f5f7ff;display:flex;align-items:center;justify-content:center;font-size:18px}
+.info-card{display:flex;gap:14px;align-items:flex-start;background:var(--card-bg);border:1px solid rgba(15,20,30,0.06);padding:16px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm)}
+.info-icon{width:44px;height:44px;border-radius:var(--radius-sm);background:#f5f7ff;display:flex;align-items:center;justify-content:center;font-size:18px}
 .info-title{font-weight:700}
 .info-text{color:var(--color-muted);font-size:13px}
 
-.kontakt-right .form-card{background:var(--card-bg);border:1px solid rgba(var(--color-primary-rgb),0.06);padding:20px;border-radius:8px}
+.kontakt-right .form-card{background:var(--card-bg);border:1px solid rgba(var(--color-primary-rgb),0.08);padding:20px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm)}
 .form-card h3{margin:0 0 6px 0}
 .small-muted{color:var(--color-muted);margin:0 0 12px 0}
 
@@ -35,10 +35,12 @@
 .grid-form .col{display:flex;flex-direction:column}
 .grid-form .col-full{grid-column:1 / -1}
 .grid-form label{font-size:13px;color:var(--color-text);display:flex;flex-direction:column;gap:8px}
-.grid-form input,.grid-form textarea{padding:10px;border-radius:6px;border:1px solid #eef2ff;outline:none}
-.grid-form input:focus,.grid-form textarea:focus{box-shadow:0 8px 24px rgba(var(--color-primary-rgb),0.06);border-color:var(--color-primary)}
+.grid-form input,.grid-form textarea{padding:10px;border-radius:var(--radius-sm);border:1px solid #eef2ff;outline:none;transition: box-shadow .2s ease, border-color .15s ease}
+.grid-form input:focus,.grid-form textarea:focus{box-shadow:var(--focus-ring);border-color:var(--color-primary)}
 
-.btn-submit{width:100%;background:var(--color-primary);border:none;color:#fff;padding:12px;border-radius:8px;font-weight:700;border-radius:6px;box-shadow:0 8px 24px rgba(var(--color-primary-rgb),0.12);cursor:pointer}
+.btn-submit{width:100%;background:var(--color-primary);border:none;color:#fff;padding:12px;border-radius:var(--radius-sm);font-weight:700;box-shadow:var(--shadow-sm);cursor:pointer;transition:box-shadow .2s ease, background-color .15s ease}
+.btn-submit:hover{background: var(--color-primary-700); box-shadow: var(--shadow-md)}
+.btn-submit:focus-visible{outline:none; box-shadow: var(--focus-ring)}
 .consent{font-size:13px;color:var(--color-muted);text-align:center;padding:12px 4px}
 
 @media (max-width:900px){

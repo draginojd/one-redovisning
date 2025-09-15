@@ -34,18 +34,18 @@
 
 .service-card {
   background: var(--color-surface);
-  border-radius: 8px;
-  padding: 22px 20px;
-  box-shadow: 0 8px 18px rgba(2,6,23,0.04);
-  border: 1px solid rgba(15,20,30,0.04);
+  border-radius: var(--radius-md);
+  padding: 20px 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(15,20,30,0.06);
   display: flex;
   flex-direction: column;
   gap: 12px;
   min-height: 260px;
 }
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(2,6,23,0.08);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
 .service-top {
@@ -60,7 +60,7 @@
   display: inline-grid;
   place-items: center;
   background: rgba(241,239,255,0.95);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
 }
 .service-icon .service-svg {
   color: var(--color-primary);
@@ -140,7 +140,7 @@
   width: 100%;
   background: rgb(57, 221, 120);
   color: white;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   padding: 8px 48px 8px 16px; /* extra right padding for absolute arrow */
   font-weight: 700;
   font-size: 14px;
@@ -149,7 +149,8 @@
   display: inline-block;
   text-decoration: none;
   position: relative; /* anchor for absolute arrow */
-  transition: background-color .15s ease, color .15s ease, box-shadow .05s ease, transform .05s ease;
+  transition: background-color .15s ease, color .15s ease, box-shadow .15s ease, transform .05s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-label { vertical-align: middle; }
@@ -173,15 +174,15 @@
 .btn-outline:hover {
   background: rgb(0, 140, 255);
   color: #ffffff;
- 
+  box-shadow: var(--shadow-md);
 }
 .btn-outline:active {
   transform: translate(2px, 2px);
-  box-shadow: 0 0 0 var(--color-text);
+  box-shadow: var(--shadow-sm);
 }
 .btn-outline:focus-visible {
-  outline: 2px dashed var(--color-text);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 .btn-outline[aria-disabled="true"],
 .btn-outline:disabled {
