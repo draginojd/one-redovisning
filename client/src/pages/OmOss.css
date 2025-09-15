@@ -24,8 +24,22 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
+  position: relative;
+  isolation: isolate; /* ensure overlay rounds correctly */
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 .omoss-photo img{ display:block; width:100%; height:auto; }
+.omoss-photo:hover{ transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+/* Overlay and content */
+.photo-overlay{ position:absolute; inset:0; background: linear-gradient(0deg, rgba(21,33,61,0.65), rgba(21,33,61,0.05)); opacity: 0; transition: opacity .22s ease; }
+.photo-content{ position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; gap:8px; padding:18px; color:#fff; opacity:0; transform: translateY(8px); transition: opacity .22s ease, transform .22s ease; }
+.omoss-photo:hover .photo-overlay{ opacity: 1; }
+.omoss-photo:hover .photo-content{ opacity:1; transform: translateY(0); }
+.photo-title{ margin:0; font-size:20px; font-weight:800; letter-spacing:.2px; }
+.photo-sub{ margin:0; font-size:14px; opacity:.95; }
+.photo-btn{ margin-top:8px; align-self:flex-start; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.35); color:#fff; padding:8px 12px; border-radius: var(--radius-sm); text-decoration:none; font-weight:700; font-size:13px; }
+.omoss-photo:hover .photo-btn{ background: rgba(255,255,255,0.26); }
 
 .omoss-content .eyebrow{
   display:inline-block;
