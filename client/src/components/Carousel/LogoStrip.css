@@ -1,0 +1,13 @@
+/* Client logo strip */
+.section-logos{ padding: 12px 20px 40px; background: var(--color-surface); }
+.logos-inner{ max-width: 1100px; margin: 0 auto; }
+.logos-header{ text-align:center; margin-bottom: 12px; }
+.logos-header p{ margin: 0; color: var(--color-muted); }
+
+.logo-row{ display:flex; flex-wrap:wrap; gap: 18px 28px; align-items:center; justify-content:center; }
+.logo{ padding: 8px 16px; border: 1px dashed rgba(15,20,30,0.12); border-radius: var(--radius-sm); color: var(--color-text); opacity: .8; filter: grayscale(100%); font-weight: 700; letter-spacing: .3px; }
+.logo:hover{ opacity: 1; filter: grayscale(0%); border-style: solid; }
+
+@media (max-width: 700px){
+  .logo{ font-size: 14px; }
+}

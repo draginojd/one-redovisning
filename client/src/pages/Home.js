@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import Hero from '../components/Hero/Hero';
 import Services from '../components/Services/Services';
 import Prisuppskattning from './Prisuppskattning';
+import Testimonials from '../components/Carousel/Testimonials';
+import LogoStrip from '../components/Carousel/LogoStrip';
 
 function Home() {
   const [apiMessage, setApiMessage] = useState('');
@@ -20,6 +22,8 @@ function Home() {
   <div style={{ marginTop: '3rem' }}>
     <Prisuppskattning />
   </div>
+  <Testimonials />
+  <LogoStrip />
       <motion.section initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
         <p>{apiMessage}</p>
       </motion.section>

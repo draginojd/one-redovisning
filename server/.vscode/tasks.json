@@ -1,0 +1,24 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "start-server",
+			"type": "shell",
+			"command": "npm start",
+			"args": [],
+			"isBackground": false,
+			"group": "build"
+		},
+		{
+			"label": "start-server",
+			"type": "shell",
+			"command": "npm start",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": "build"
+		}
+	]
+}
