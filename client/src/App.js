@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import OmOss from './pages/OmOss';
+import Tjanster from './pages/Tjanster';
 import Kontakt from './pages/Kontakt';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/om-oss" element={<OmOss />} />
+            <Route path="/tjanster" element={<Tjanster />} />
             <Route path="/kontakt" element={<Kontakt />} />
             {/* Additional routes can be added here */}
           </Routes>
