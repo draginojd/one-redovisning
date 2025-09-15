@@ -2,15 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaRegFileAlt, FaWallet, FaChartLine, FaUsers, FaCalendarCheck, FaRegComments, FaCalculator } from 'react-icons/fa';
 import './Services.css';
-
-const services = [
-  { title: 'Löpande bokföring', bullets: ['Digitala kvitton', 'Automatisk avstämning', 'Månadsrapporter'] },
-  { title: 'Årsredovisning', bullets: ['K1-K3 regelverk', 'Digitala signaturer', 'Skatteverket kontakt'] },
-  { title: 'Ekonomisk analys', bullets: ['Månadsanalys', 'Nyckeltal', 'Prognoser'] },
-  { title: 'Lönehantering', bullets: ['Lönespecifikationer', 'Arbetsgivardeklarationer', 'Försäkringsärenden'] },
-  { title: 'Rådgivning', bullets: ['Skatteoptimering', 'Företagsstruktur', 'Investeringsbeslut'] },
-  { title: 'Månadsuppföljning', bullets: ['Månatlig rapport', 'Personliga möten', 'Proaktiv rådgivning'] }
-];
+import { servicesData } from './servicesData';
 
 function IconBookkeeping(props){
   return (
@@ -117,7 +109,7 @@ function Services() {
       </div>
 
       <div className="services-grid">
-        {services.map((s, i) => {
+  {servicesData.map((s, i) => {
           const Icon = iconMap[i] || FaRegComments;
           const isFirst = i === 0;
           return (
@@ -135,7 +127,7 @@ function Services() {
                 <Icon className="service-svg" />
               </div>
               <h3>{s.title}</h3>
-              <p className="service-desc">Professionell tjänst anpassad efter ert företags behov.</p>
+              <p className="service-desc">{s.description}</p>
               <ul className={`service-list expanded`}>
                 {s.bullets.map((b) => (
                   <li key={b}>{b}</li>

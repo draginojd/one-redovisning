@@ -7,6 +7,7 @@ import Prisuppskattning from './Prisuppskattning';
 import Testimonials from '../components/Carousel/Testimonials';
 import ImageGallery from '../components/Gallery/ImageGallery';
 import SplitContact from '../components/Contact/SplitContact';
+import ServicesShowcase from '../components/Services/ServicesShowcase';
 
 function Home() {
   const [apiMessage, setApiMessage] = useState('');
@@ -24,6 +25,8 @@ function Home() {
   <div style={{ marginTop: '3rem' }}>
     <Prisuppskattning />
   </div>
+  {/* Full services showcase (intro + 3x2 cards) */}
+  <ServicesShowcase />
   <Testimonials />
   <ImageGallery />
   <SplitContact />

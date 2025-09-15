@@ -13,7 +13,7 @@ export default function ImageGallery(){
     <div className="testimonials-bleed-full">
       <section className="testimonials" aria-labelledby="testimonials-heading">
       <div className="testimonials-hero">
-        <small className="eyebrow">GREAT ACCOUNTING SWEDEN AB</small>
+  <small className="eyebrow">One Redovisning AB</small>
         <h2 id="testimonials-heading">Vad säger våra kunder</h2>
         <p className="sub">Vi är otroligt stolta över alla våra nöjda kunder och anstränger oss lite extra för att ni ska känna er väl omhändertagna</p>
   </div>
