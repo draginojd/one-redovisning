@@ -206,3 +206,46 @@
   }
 }
 
+/* --- Image tiles row above cards --- */
+.services-hero-grid{
+  max-width: 1200px;
+  margin: 0 auto 22px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.image-tile{
+  position: relative;
+  display: block;
+  min-height: 220px;
+  background-position: center;
+  background-size: cover;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  border: 1px solid rgba(15,20,30,0.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.image-tile:hover{ box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.image-tile:active{ transform: translateY(0); }
+
+.tile-overlay{
+  position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,0.45), rgba(0,0,0,0.05));
+}
+
+.tile-content{
+  position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px;
+  padding: 16px 18px; color: #fff;
+}
+.tile-title{ margin: 0; font-size: 18px; font-weight: 800; letter-spacing: .1px; }
+.tile-sub{ margin: 0; opacity: .9; font-size: 14px; }
+.tile-btn{ margin-top: 8px; align-self: flex-start; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.35); color: #fff; padding: 6px 12px; border-radius: var(--radius-sm); font-weight: 600; font-size: 13px; }
+.image-tile:hover .tile-btn{ background: rgba(255,255,255,0.25); }
+
+@media (max-width: 900px) {
+  .services-hero-grid{ grid-template-columns: 1fr; }
+}
+

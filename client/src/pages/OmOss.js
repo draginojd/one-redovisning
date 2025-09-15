@@ -34,7 +34,17 @@ function OmOss() {
       transition={{ duration: 0.6 }}
     >
       <div className="omoss-container">
-        <div className="omoss-left">
+        {/* Left column image */}
+        <figure className="omoss-photo">
+          <img
+            src="https://images.unsplash.com/photo-1573164574472-797cdf4a5832?q=80&w=1400&auto=format&fit=crop"
+            alt="Affärsmöte i modernt kontor"
+            loading="lazy"
+          />
+        </figure>
+
+        {/* Right column content */}
+        <div className="omoss-content">
           <div className="eyebrow">Om One Redovisning Stockholm AB</div>
           <h1 className="omoss-title">
             Din pålitliga partner inom <span className="accent">redovisning</span> och ekonomi
@@ -69,24 +79,23 @@ function OmOss() {
               <div className="stat-label">Svarstid</div>
             </div>
           </div>
-        </div>
-
-        <aside className="omoss-right">
-          <h3 className="values-heading">Våra värderingar</h3>
-          <div className="values-list">
-            {values.map((v) => (
-              <article className="value-card" key={v.title}>
-                <div className="value-icon" aria-hidden>
-                  {v.icon}
-                </div>
-                <div className="value-body">
-                  <h4 className="value-title">{v.title}</h4>
-                  <p className="value-text">{v.text}</p>
-                </div>
-              </article>
-            ))}
+          <div className="values-block">
+            <h3 className="values-heading">Våra värderingar</h3>
+            <div className="values-list">
+              {values.map((v) => (
+                <article className="value-card" key={v.title}>
+                  <div className="value-icon" aria-hidden>
+                    {v.icon}
+                  </div>
+                  <div className="value-body">
+                    <h4 className="value-title">{v.title}</h4>
+                    <p className="value-text">{v.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
-        </aside>
+        </div>
       </div>
     </motion.section>
   );

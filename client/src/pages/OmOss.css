@@ -14,9 +14,27 @@
   max-width:1100px;
   margin:0 auto;
   display:grid;
-  grid-template-columns:1fr 420px;
+  grid-template-columns: 520px 1fr; /* image left, content right */
   gap:40px;
   align-items:start;
+}
+
+.omoss-photo{
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.omoss-photo img{ display:block; width:100%; height:auto; }
+
+.omoss-content .eyebrow{
+  display:inline-block;
+  background:#f3f4f6;
+  color:var(--muted);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:13px;
+  margin-bottom:16px;
 }
 
 .omoss-left .eyebrow{
@@ -65,9 +83,7 @@
   color:var(--muted);
 }
 
-.omoss-right{
-  border-radius: var(--radius-md);
-}
+.values-block{ margin-top: 18px; }
 
 .values-heading{
   margin:0 0 12px 0;
@@ -114,7 +130,7 @@
 
 @media (max-width:900px){
   .omoss-container{
-    grid-template-columns:1fr;
+  grid-template-columns:1fr;
   }
 
   .stats-row{flex-wrap:wrap}
