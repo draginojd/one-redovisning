@@ -60,7 +60,7 @@
     overflow-x:hidden;
   }
   .testimonials-grid{ grid-template-columns: 1fr; }
-  .testimonials-hero h2{ font-size:32px; }
+  .testimonials-hero h2{ font-size:32px;  }
   .testimonial-card{ min-height:auto; padding:16px; border-radius:6px; }
   .card-company{ font-size:20px; margin-bottom:12px; }
   .card-meta{ min-height:48px; }
