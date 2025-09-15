@@ -1,19 +1,21 @@
 /* Testimonials carousel */
 .section-testimonials{ padding: 48px 20px 64px; background: var(--color-surface); }
 .testimonials-inner{ max-width: 1100px; margin: 0 auto; }
+/* ensure slides include padding in their width so they don't cause horizontal overflow */
+.testimonials-inner{ padding: 0 12px; }
 .testimonials-header{ text-align:center; margin-bottom: 18px; }
 .testimonials-header h2{ margin:0; font-size: 28px; font-weight: 800; }
 .testimonials-header p{ margin:8px auto 0; max-width:720px; color: var(--color-muted); }
 
 .testimonials-slideshow{ margin-bottom: 16px; }
-.slideshow-inner{ position: relative; width: 100%; aspect-ratio: 16/6; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); background: #e9eef5; }
-.slideshow-image{ position:absolute; inset:0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.slideshow-inner{ position: relative; width: 100%; aspect-ratio: 16/6; overflow: hidden; border-radius: 0%; box-shadow: var(--shadow-md); background: #e9eef5; }
+.slideshow-image{  position:absolute; inset:0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .slideshow-inner::after{ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.04) 100%); pointer-events:none; }
 
 .carousel{ position: relative; overflow: hidden; border-radius: var(--radius-lg); border: 1px solid rgba(15,20,30,0.06); box-shadow: var(--shadow-md); background: var(--color-surface); padding-bottom: 36px; }
 .track{ display: flex; position: relative; }
 
-.slide{ min-width: 100%; padding: 24px; display: grid; grid-template-columns: 80px 1fr; gap: 16px; align-items: center; }
+.slide{ min-width: 100%; padding: 24px; display: grid; grid-template-columns: 80px 1fr; gap: 16px; align-items: center; box-sizing: border-box; }
 .avatar{ width: 72px; height: 72px; border-radius: 50%; background: #e6efff; display: grid; place-items: center; color: var(--color-primary); font-weight: 800; box-shadow: var(--shadow-sm); }
 .quote{ margin:0; color: var(--color-text); font-size: 16px; line-height: 1.55; }
 .meta{ margin-top:8px; color: var(--color-muted); font-size: 14px; }
@@ -45,7 +47,19 @@
 }
 
 @media (max-width: 700px){
-  .slideshow-inner{ aspect-ratio: 16/9; }
-  .slide{ grid-template-columns: 56px 1fr; }
+  .slideshow-inner{ aspect-ratio: 3/2; border-radius: 12px; }
+  .slide{ grid-template-columns: 56px 1fr; padding: 18px; gap:12px; }
   .avatar{ width:56px; height:56px; }
+
+  /* Reserve more space at the bottom of the carousel so the pill doesn't overlap content */
+  /* Keep overflow hidden to prevent horizontal scroll during transitions */
+  .carousel{ padding-bottom: 80px; overflow: hidden; }
+  .dots{ bottom: 12px; padding: 8px 10px; gap:10px; box-shadow: 0 10px 28px rgba(12,18,28,0.12); }
+  .dot{ width:36px; height:36px; padding:2px; }
+  .dot svg{ width:18px; height:18px; }
+  .dot[aria-current="true"] svg{ transform: scale(1.16); }
+
+  /* Slightly smaller heading on narrow devices */
+  .testimonials-header h2{ font-size: 24px; }
+  .testimonials-header p{ font-size: 14px; }
 }

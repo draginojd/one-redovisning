@@ -47,6 +47,7 @@ export default function Testimonials(){
   const [paused, setPaused] = useState(false);
   const touchStartX = useRef(null);
   const touchDx = useRef(0);
+  const carouselRef = useRef(null);
   const total = SLIDES.length;
   const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -67,10 +68,42 @@ export default function Testimonials(){
 
   const slide = useMemo(() => SLIDES[index], [index]);
 
-  const onKeyDown = (e) => {
-    if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
-    if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
-  };
+  // global keyboard handler so the carousel container doesn't need to be focused
+  useEffect(() => {
+    const handler = (e) => {
+      // skip if user typing in input/textarea
+      const active = document.activeElement && document.activeElement.tagName;
+      if (active === 'INPUT' || active === 'TEXTAREA') return;
+      if (e.key === 'ArrowRight') { e.preventDefault(); setDirection(1); setIndex(i => (i + 1) % total); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); setDirection(-1); setIndex(i => (i - 1 + total) % total); }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [total]);
+
+  // focusin/focusout on the carousel element to pause autoplay when internal controls are focused
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    // Preserve scroll position when internal controls are focused to avoid page jump
+    let lastScroll = { x: window.scrollX || 0, y: window.scrollY || 0 };
+    const onFocusIn = (ev) => {
+      // record scroll and pause autoplay
+      lastScroll = { x: window.scrollX || 0, y: window.scrollY || 0 };
+      setPaused(true);
+      // restore scroll on next frame to prevent browser auto-scroll-to-focus
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => window.scrollTo(lastScroll.x, lastScroll.y));
+      });
+    };
+    const onFocusOut = () => setPaused(false);
+    el.addEventListener('focusin', onFocusIn);
+    el.addEventListener('focusout', onFocusOut);
+    return () => {
+      el.removeEventListener('focusin', onFocusIn);
+      el.removeEventListener('focusout', onFocusOut);
+    };
+  }, []);
 
   const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; touchDx.current = 0; };
   const onTouchMove = (e) => { if (touchStartX.current != null) touchDx.current = e.touches[0].clientX - touchStartX.current; };
@@ -112,14 +145,11 @@ export default function Testimonials(){
         </header>
 
         <div
+          ref={carouselRef}
           className="carousel"
           role="region" aria-roledescription="carousel" aria-label="Kundcitat"
-          tabIndex={0}
-          onKeyDown={onKeyDown}
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
-          onFocus={() => setPaused(true)}
-          onBlur={() => setPaused(false)}
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
