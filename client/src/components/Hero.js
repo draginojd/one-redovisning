@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './Hero/Hero.css';
 
 function Hero() {
@@ -23,8 +24,8 @@ function Hero() {
           <li>✔ Snabb support</li>
         </ul>
         <div className="hero-actions">
-          <button className="hero-btn primary">Kontakta oss idag</button>
-          <button className="hero-btn">Läs mer om våra tjänster</button>
+          <Link to="/kontakt" className="hero-btn primary" role="button">Kontakta oss idag</Link>
+          <Link to="/tjanster" className="hero-btn">Läs mer om våra tjänster</Link>
         </div>
       </motion.div>
     </section>

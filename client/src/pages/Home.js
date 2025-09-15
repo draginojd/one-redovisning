@@ -21,7 +21,6 @@ function Home() {
     <Prisuppskattning />
   </div>
       <motion.section initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
-        <h2>Välkommen till One Redovisning AB</h2>
         <p>{apiMessage}</p>
       </motion.section>
     </>
