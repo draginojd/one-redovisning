@@ -5,6 +5,7 @@ import './Services.css';
 import { servicesData } from './servicesData';
 import { servicesContainer, serviceItem, reducedMotionImmediate } from './serviceAnimations';
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
+import { useNavigate } from 'react-router-dom';
 
 function IconBookkeeping(props){
   return (
@@ -64,6 +65,7 @@ const cardVariants = {
 };
 
 function Services() {
+  const navigate = useNavigate();
   const reduce = usePrefersReducedMotion();
   const iconMap = [FaCalculator, FaRegFileAlt, FaChartLine, FaWallet, FaUsers, FaCalendarCheck];
 
@@ -79,6 +81,7 @@ function Services() {
         <a
           className="image-tile"
           href="/tjanster"
+          onClick={(e) => { e.preventDefault(); navigate('/tjanster'); window.scrollTo(0,0); }}
           aria-label="Läs mer om våra tjänster: Digital bokföring"
           style={{
             backgroundImage:
@@ -96,6 +99,7 @@ function Services() {
         <a
           className="image-tile"
           href="/kontakt"
+          onClick={(e) => { e.preventDefault(); navigate('/kontakt'); window.scrollTo(0,0); }}
           aria-label="Kontakta vårt team: Expertis och precision"
           style={{
             backgroundImage:
@@ -141,17 +145,18 @@ function Services() {
                 ))}
               </ul>
               <div className="service-cta">
-                <a
+                <button
+                  type="button"
                   className="btn-outline"
-                  href={`/kontakt?subject=${encodeURIComponent(s.title)}`}
                   aria-label={`Kontakta oss angående ${s.title}`}
+                  onClick={() => { navigate(`/kontakt?subject=${encodeURIComponent(s.title)}`); window.scrollTo(0,0); }}
                 >
                   <span className="btn-label">Jag är intresserad</span>
                   <svg className="btn-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <path d="M1 6h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M9 2l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </a>
+                </button>
               </div>
             </motion.article>
           );

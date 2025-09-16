@@ -140,8 +140,13 @@
   width: 100%;
   background: rgb(57, 221, 120);
   color: white;
+  /* reset native button appearance so <button> matches anchor visuals */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  padding: 8px 48px 8px 16px; /* ensure we keep intended padding ordering after adding border reset */
   border-radius: var(--radius-lg);
-  padding: 8px 48px 8px 16px; /* extra right padding for absolute arrow */
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.2px;

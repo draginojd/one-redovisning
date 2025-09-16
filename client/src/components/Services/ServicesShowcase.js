@@ -7,11 +7,13 @@ import { servicesContainer, serviceItemShowcase, reducedMotionImmediate } from '
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { AnimatedText } from '../Animated/AnimatedText';
+import { Link, useNavigate } from 'react-router-dom';
 
 const iconMap = [FaCalculator, FaRegFileAlt, FaChartLine, FaWallet, FaUsers, FaCalendarCheck];
 
 function ServicesShowcase() {
   const reduce = usePrefersReducedMotion();
+  const navigate = useNavigate();
   const innerRef = React.useRef(null);
   const isSmall = useMediaQuery('(max-width: 900px)');
   const inView = useInView(innerRef, { once: true, amount: isSmall ? 0.2 : 0.45 });
@@ -43,9 +45,19 @@ function ServicesShowcase() {
           <motion.h2 variants={skipAnim ? undefined : line} style={{ margin: '8px 0 12px', fontSize: '48px', lineHeight: 1.02, color: 'var(--color-text)', fontWeight: 500 }}>
             {skipAnim ? <span>Vad kan vi erbjuda dig som kund</span> : <AnimatedText text="Vad kan vi erbjuda dig som kund" as="span" delay={0.15} />}
           </motion.h2>
-          <motion.a variants={skipAnim ? undefined : line} href="/tjanster" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'var(--color-primary)', fontWeight: 700, textDecoration: 'none' }}>
-            {skipAnim ? <span>Läs om våra tjänster här</span> : <AnimatedText text="Läs om våra tjänster här" as="span" delay={0.3} />} <span style={{ fontSize: 18 }}>→</span>
-          </motion.a>
+          <motion.div variants={skipAnim ? undefined : line} style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+            <a
+              href="/tjanster"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('/tjanster');
+                setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }), 8);
+              }}
+              style={{ color: 'var(--color-primary)', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}
+            >
+              {skipAnim ? <span>Läs om våra tjänster här</span> : <AnimatedText text="Läs om våra tjänster här" as="span" delay={0.3} />} <span style={{ fontSize: 18 }}>→</span>
+            </a>
+          </motion.div>
         </motion.div>
 
         <div>
@@ -72,13 +84,13 @@ function ServicesShowcase() {
                   <p className="service-desc">{s.excerpt}</p>
                   <div className="divider" />
                   <div className="service-cta">
-                    <a className="btn-outline" href="/tjanster" aria-label={`Läs mer om ${s.title}`}>
+                    <Link className="btn-outline" to="/tjanster" aria-label={`Läs mer om ${s.title}`} onClick={() => setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }), 8)}>
                       <span className="btn-label">Läs mer här</span>
                       <svg className="btn-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                         <path d="M1 6h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M9 2l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </motion.article>
               );

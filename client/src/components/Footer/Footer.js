@@ -2,8 +2,18 @@ import React from 'react';
 import './Footer.css';
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaEnvelope } from 'react-icons/fa';
 import logo from '../../assets/onelogga.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Footer(){
+  const navigate = useNavigate();
+
+  const go = (path) => (e) => {
+    e.preventDefault();
+    navigate(path);
+    // ensure top of page after navigation
+    window.scrollTo(0,0);
+  };
+
   return (
     <footer className="site-footer deep">
       <div className="footer-inner">
@@ -15,12 +25,11 @@ export default function Footer(){
         <div className="footer-col links">
           <h5>Snabblänkar</h5>
           <ul>
-            <li><a href="/">Hem</a></li>
-            <li><a href="/tjanster">Tjänster</a></li>
-            <li><a href="/prisuppskattning">Prisuppskattning</a></li>
-            <li><a href="/om-oss">Om oss</a></li>
-            <li><a href="/jobba-hos-oss">Jobba hos oss</a></li>
-            <li><a href="/kontakt">Kontakt</a></li>
+            <li><a href="/" onClick={go('/')}>Hem</a></li>
+            <li><a href="/tjanster" onClick={go('/tjanster')}>Tjänster</a></li>
+            <li><a href="/om-oss" onClick={go('/om-oss')}>Om oss</a></li>
+            <li><a href="/jobba-hos-oss" onClick={go('/jobba-hos-oss')}>Jobba hos oss</a></li>
+            <li><a href="/kontakt" onClick={go('/kontakt')}>Kontakt</a></li>
           </ul>
         </div>
 
@@ -36,8 +45,8 @@ export default function Footer(){
       <div className="footer-bottom deep-bottom">
         <p>© {new Date().getFullYear()} One Redovisning Stockholm AB. Alla rättigheter förbehållna.</p>
         <div className="policies">
-          <a href="/integritet">Integritetspolicy</a>
-          <a href="/villkor">Villkor</a>
+          <a href="/integritet" onClick={go('/integritet')}>Integritetspolicy</a>
+          <a href="/villkor" onClick={go('/villkor')}>Villkor</a>
         </div>
       </div>
     </footer>

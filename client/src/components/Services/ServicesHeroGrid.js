@@ -1,12 +1,21 @@
 import React from 'react';
 import './Services.css';
+import { useNavigate } from 'react-router-dom';
 
 function ServicesHeroGrid() {
+  const navigate = useNavigate();
+
+  const go = (path) => (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    navigate(path);
+    window.scrollTo(0,0);
+  };
   return (
     <div className="services-hero-grid" aria-hidden="false">
       <a
         className="image-tile"
         href="/tjanster"
+        onClick={go('/tjanster')}
         aria-label="Läs mer om våra tjänster: Digital bokföring"
         style={{
           backgroundImage:
@@ -23,7 +32,8 @@ function ServicesHeroGrid() {
 
       <a
         className="image-tile"
-        href="/kontakt"
+  href="/kontakt"
+  onClick={go('/kontakt')}
         aria-label="Kontakta vårt team: Expertis och precision"
         style={{
           backgroundImage:
